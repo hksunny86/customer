@@ -18,16 +18,16 @@ public class AsyncServiceExample {
                         String resultA = serviceA.get();
                         Integer resultB = serviceB.get();
                         List<String> resultc = serviceC.get();
-                        return "Summary: A=" + resultA + " " + "B= " + resultB + " " + "C= " + resultc.size();
+                        return "Summary: A= " + resultA + " " + "B= " + resultB + " " + "C= " + resultc.size();
                     } catch (InterruptedException | ExecutionException e) {
                         throw new RuntimeException("Exception", e);
                     }
                 });
-        System.out.println("Output" + finalResult.get());
+        System.out.println("Output\n" + finalResult.get());
     }
 
     private static String callService() {
-        return "ServiceA";
+        return "Service A";
     }
 
     private static Integer callServiceB() {

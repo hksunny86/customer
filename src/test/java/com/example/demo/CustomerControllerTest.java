@@ -3,6 +3,8 @@ package com.example.demo;
 import com.example.demo.controller.CustomerController;
 import com.example.demo.model.Customer;
 import com.example.demo.service.CustomerServcie;
+
+import com.google.gson.Gson;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
@@ -38,6 +40,8 @@ public class CustomerControllerTest {
 
         assertEquals(200, responseEntity.getStatusCodeValue());
         assertEquals("Ali", responseEntity.getBody().getName());
+        Gson g = new Gson();
+        System.out.println("Response\n" + g.toJson(responseEntity.getBody()));
 
     }
 }
